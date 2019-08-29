@@ -5,7 +5,13 @@
 # seed  - starting seed value
 generateY <- function(X, beta, sigma, seed = 5832652){
   #[ToDo] Set seed and generate Y following linear model
-  
+  ### sanity check
+  if(sigma <= 0){
+    stop("Sigma should be Positive")
+  }
+  n <- dim(X)[1] ## data dimension 
+  error = rnorm(n, 0, sigma)
+  Y = X%*%beta + error
   # Return Y
   return(Y)
 }
@@ -15,7 +21,6 @@ generateY <- function(X, beta, sigma, seed = 5832652){
 # Y -response
 calculateBeta <- function(X, Y){
   # Calculate beta_LS
-  
   # Return beta
   return(beta_LS)
 }
