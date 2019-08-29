@@ -25,5 +25,5 @@ if(as.numeric(crossprod(beta_lm-beta_LS))<eps)
 {
   print("identical")
 }else{
-  print("Non-identical")
+  print("Not-identical")
 }
