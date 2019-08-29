@@ -9,6 +9,8 @@ generateY <- function(X, beta, sigma, seed = 5832652){
   if(sigma <= 0){
     stop("Sigma should be Positive")
   }
+  seed = seed
+  set.seed(seed)
   n <- dim(X)[1] ## data dimension 
   error = rnorm(n, 0, sigma)
   Y = X%*%beta + error
