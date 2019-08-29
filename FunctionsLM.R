@@ -30,7 +30,7 @@ calculateBeta <- function(X, Y){
 
 # Calculate MSE
 calculateMSE <- function(beta, beta_LS){
-  
+  MSE = as.numeric(crossprod(beta-beta_LS))
   # Return MSE - error ||beta - beta_LS||_2^2
   return(MSE)
 }
